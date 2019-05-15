@@ -44,6 +44,8 @@ namespace MyXtraGrid {
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowPreview = true;
+            this.gridView1.PreviewFieldName = "Value3";
             this.gridView1.CalcRowHeight += new DevExpress.XtraGrid.Views.Grid.RowHeightEventHandler(this.gridView1_CalcRowHeight);
             // 
             // Form1

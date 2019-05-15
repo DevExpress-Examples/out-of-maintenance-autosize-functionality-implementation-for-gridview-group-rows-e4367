@@ -59,7 +59,7 @@ namespace MyXtraGrid {
                 string groupRowDisplayText = viewInfo.View.GetGroupRowDisplayText(e.RowHandle);
 
                 // current group row width obtaining
-                int requredWidth = viewInfo.ViewRects.Rows.Width - viewInfo.PreviewIndent * (viewInfo.View.GetRowLevel(e.RowHandle) + 2);
+                int requredWidth = viewInfo.ViewRects.Rows.Width - viewInfo.Painter.ElementsPainter.RowPreview.GetPreviewIndent(viewInfo) * (viewInfo.View.GetRowLevel(e.RowHandle) + 2);
 
                 // required group row height calculating
                 int requiredGroupRowTextHeight = viewInfo.PaintAppearance.GroupRow.CalcTextSizeInt(viewInfo.GInfo.Graphics, groupRowDisplayText, requredWidth).Height;
