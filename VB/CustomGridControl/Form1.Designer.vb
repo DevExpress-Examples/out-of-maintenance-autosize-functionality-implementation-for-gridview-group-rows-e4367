@@ -1,6 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
-Namespace MyXtraGrid
+﻿Namespace MyXtraGrid
 	Partial Public Class Form1
 		''' <summary>
 		''' Required designer variable.
@@ -45,7 +43,10 @@ Namespace MyXtraGrid
 			' 
 			Me.gridView1.GridControl = Me.gridControl1
 			Me.gridView1.Name = "gridView1"
-'			Me.gridView1.CalcRowHeight += New DevExpress.XtraGrid.Views.Grid.RowHeightEventHandler(Me.gridView1_CalcRowHeight);
+			Me.gridView1.OptionsView.ShowPreview = True
+			Me.gridView1.PreviewFieldName = "Value3"
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.gridView1.CalcRowHeight += new DevExpress.XtraGrid.Views.Grid.RowHeightEventHandler(this.gridView1_CalcRowHeight);
 			' 
 			' Form1
 			' 
@@ -55,7 +56,8 @@ Namespace MyXtraGrid
 			Me.Controls.Add(Me.gridControl1)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
+'INSTANT VB NOTE: The following InitializeComponent event wireup was converted to a 'Handles' clause:
+'ORIGINAL LINE: this.Load += new System.EventHandler(this.Form1_Load);
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)

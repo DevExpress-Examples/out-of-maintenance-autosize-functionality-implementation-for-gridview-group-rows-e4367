@@ -1,5 +1,4 @@
-Imports Microsoft.VisualBasic
-Imports System
+﻿Imports System
 Imports System.Collections.Generic
 Imports System.ComponentModel
 Imports System.Data
@@ -13,11 +12,12 @@ Imports DevExpress.XtraGrid.Views.Grid.ViewInfo
 Namespace MyXtraGrid
 	Partial Public Class Form1
 		Inherits Form
+
 		Public Sub New()
 			InitializeComponent()
 		End Sub
 
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
 			Dim someDT As New DataTable()
 			someDT.Columns.Add("GroupInformation1", GetType(String))
 			someDT.Columns.Add("GroupInformation2", GetType(String))
@@ -56,7 +56,7 @@ Namespace MyXtraGrid
 				Dim groupRowDisplayText As String = viewInfo.View.GetGroupRowDisplayText(e.RowHandle)
 
 				' current group row width obtaining
-				Dim requredWidth As Integer = viewInfo.ViewRects.Rows.Width - viewInfo.PreviewIndent * (viewInfo.View.GetRowLevel(e.RowHandle) + 2)
+				Dim requredWidth As Integer = viewInfo.ViewRects.Rows.Width - viewInfo.Painter.ElementsPainter.RowPreview.GetPreviewIndent(viewInfo) * (viewInfo.View.GetRowLevel(e.RowHandle) + 2)
 
 				' required group row height calculating
 				Dim requiredGroupRowTextHeight As Integer = viewInfo.PaintAppearance.GroupRow.CalcTextSizeInt(viewInfo.GInfo.Graphics, groupRowDisplayText, requredWidth).Height
